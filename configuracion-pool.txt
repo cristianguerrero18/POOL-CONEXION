@@ -1,0 +1,71 @@
+Requerimiento 
+- NetBeans Apache 
+-jdk descargado 8.0.33
+-tener glasfish
+-tener MySQL server 
+
+comando para abrir en la consola MySQL :
+mysql -u tu_usuario -p
+
+comando para ver base de datos existentes:
+
+SHOW DATABASES;
+
+comando para crear :
+
+CREATE DATABASE usuarios;
+
+comando para usar la base de datos creada:
+
+USE usuarios ;
+
+comando para crear tabla :
+
+CREATE TABLE usuarios_simples (
+    id_usuario INT(11) NOT NULL AUTO_INCREMENT,
+    nombre_completo VARCHAR(200) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    PRIMARY KEY (id_usuario)
+);
+
+
+-- creando el pool
+-- configuraciones 
+
+com.mysql.cj.jdbc.MysqlDataSource
+com.mysql.cj.jdbc.Driver
+
+adicional properties :
+
+URL
+UseSSL  = false
+user = root
+password = tu_password
+serverTimezone = America/Bogota
+driverClass  = com.mysql.cj.jdbc.Driver
+URL = jdbc:mysql://localhost:3306/usuarios?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=America/Bogota
+
+
+pasos para crear conexion en netbeans :
+
+servicios --> databases --> new conexion 
+
+recuerda configurar todo :
+
+root
+password 
+url : jdbc:mysql://localhost:3306/usuarios?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=America/Bogota
+
+
+
+
+
+
+
+
+
+
+
+
+
+
